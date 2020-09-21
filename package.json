@@ -1,6 +1,6 @@
 {
   "name": "amsterget-rp-testcafe",
-  "version": "5.0.1",
+  "version": "5.0.2",
   "description": "Agent for integration TestCafe with ReportPortal.",
   "main": "build/index.js",
   "scripts": {
