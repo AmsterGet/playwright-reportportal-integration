@@ -128,26 +128,3 @@ jobs:
           body: ${{ needs.create-tag.outputs.versionInfo }}
           draft: false
           prerelease: false
-
-  publish-to-npm:
-    needs: create-release
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout repository
-        uses: actions/checkout@v2
-      - name: Set up Node.js
-        uses: actions/setup-node@v1
-        with:
-          node-version: 12.x
-          registry-url: 'https://registry.npmjs.org'
-      - name: Clean install of node dependencies
-        run: npm ci
-      - name: Build the source code
-        run: npm run build
-      - name: Publish to NPM
-        run: |
-          npm config set //registry.npmjs.org/:_authToken=$NODE_AUTH_TOKEN
-          npm config list
-          npm publish --access public
-        env:
-          NODE_AUTH_TOKEN: ${{ secrets.NPM_ACCESS_TOKEN }}
