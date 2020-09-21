@@ -1,3 +1,4 @@
+.github
 coverage
 build/__tests__/
 tsconfig.json
