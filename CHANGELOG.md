@@ -1,3 +1,5 @@
+
+## [5.0.3] - 2020-09-21
 ### Fixed
 - Release pipeline (publishing to npm)
 
